@@ -1,3 +1,1 @@
-# learn-hapi
-
-Exercises to learn Hapijs
+# Exercises to learn Hapijs
