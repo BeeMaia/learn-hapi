@@ -2,21 +2,18 @@
 
 "use strict";
 
-import * as glue from "glue";
+import * as hapi from "hapi";
 
-let manifest = require("./manifest.json");
-let options = {
-	relativeTo:__dirname
-};
+const server: hapi.Server = new hapi.Server()
+server.connection({ port: 3000 });
 
-glue.compose(manifest, options, (err, server) => {
-	server.start( (err) => {
-		if (err) {
-			throw err;
-		}		
-		let server_connections = server.connections;		
-		for (let connection of server_connections){			
-			console.log('server running at: %s://%s:%s', connection.info.protocol, connection.info.address, connection.info.port);
-		}
-	})
+import routes from "./routes";
+
+routes(server);
+
+server.start((err) => {
+	if (err) {
+		throw err;
+	}
+	console.log("server running at 3000");
 })

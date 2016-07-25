@@ -84,7 +84,8 @@ gulp.task('compile', compile)
 gulp.task('copyjson', copyjson)
 
 gulp.task('default', function() {
-    copyjson();    
+    copyjson();
+    compile();
     watch();
     nodemon({
         script: entryPoint
