@@ -2,8 +2,5 @@
   "globalDependencies": {
     "hapi": "registry:dt/hapi#13.0.0+20160709092105",
     "node": "registry:dt/node#6.0.0+20160720070758"
-  },
-  "dependencies": {
-    "glue": "registry:npm/glue#3.3.0+20160618213616"
   }
 }
